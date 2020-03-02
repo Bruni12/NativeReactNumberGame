@@ -25,7 +25,7 @@ export default function App() {
       <AppLoading
         startAsync={fetchFonts}
         onFinish={() => setDataLoaded(true)}
-        onError={(err) => console.log(err)}
+        onError={err => console.log(err)}
       />
     );
   }
@@ -50,6 +50,13 @@ export default function App() {
       <GameScreen userChoice={userNumber} onGameOver={gameOverHandler} />
     );
   } else if (guessRounds > 0) {
+    content = (
+      <GameOverScreen
+        roundsNumber={guessRounds}
+        userNumber={userNumber}
+        onRestart={configureNewGameHandler}
+      />
+    );
   }
 
   return (

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Button, Image } from 'react-native';
 
 import BodyText from '../components/BodyText';
 import TitleText from '../components/TitleText';
-import MainButton from '..components/MainButton';
+import MainButton from '../components/MainButton';
 import Colors from '../constants/colors';
 
 const GameOverScreen = props => {
@@ -11,8 +11,8 @@ const GameOverScreen = props => {
     <View style={styles.screen}>
       <TitleText>The Game is Over!</TitleText>
       <View style={styles.imageContainer}>
-      <Image 
-      fadeDuration={500}
+        <Image
+      fadeDuration={400}
         // source={require('../assets/success.png')} 
         source={{uri: 'https://miro.medium.com/max/12960/0*A1rWDvguoY1j8w5I.'}} 
         style={styles.image} 
@@ -27,11 +27,12 @@ const GameOverScreen = props => {
           <Text style={styles.highlight}>{props.userNumber}</Text>.
         </BodyText>
       </View>
-     
-      <MainButton onPress={props.onRestart}>NEW GAME</MainButton> 
+
+      <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
   },
   highlight: {
     color: Colors.primary,
-    fontFamily: 'open-sans-bold',
+    fontFamily: 'open-sans-bold'
   }
 });
 
